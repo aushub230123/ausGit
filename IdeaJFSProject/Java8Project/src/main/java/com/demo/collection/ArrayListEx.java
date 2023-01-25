@@ -1,16 +1,15 @@
 package com.demo.collection;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import javax.smartcardio.CardNotPresentException;
+import java.util.*;
 
 public class ArrayListEx {
     public static void main(String[] args) {
 //        rawTypes();
 //        genericTypes();
-//        compatibilityRawAndGeneric();
+        compatibilityRawAndGeneric();
 //        workingWithArrayList();
-        arrayListOfObjects();
+//        arrayListOfObjects();
     }
 
     private static void arrayListOfObjects() {
@@ -21,6 +20,10 @@ public class ArrayListEx {
         objectArrayList.add(true);
         objectArrayList.add(55.5f);
         System.out.println(objectArrayList);
+
+        ArrayList<Throwable> myExeceptionAndErrors =  new ArrayList<Throwable>();
+        myExeceptionAndErrors.add(new ArithmeticException());
+        myExeceptionAndErrors.add(new CardNotPresentException(""));
     }
 
     private static void workingWithArrayList() {
@@ -69,12 +72,26 @@ public class ArrayListEx {
 //        ArrayList<String> rawArrayList1 = new ArrayList<String>();
 //        rawArrayList1.add(5);
 //        rawArrayList1.add(arithmeticException);
+
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(new Integer(10));
+        ArrayList<String> geniericToRaw = arrayList;
     }
 
     private static void rawTypes() {;
         //        Raw types
 //        Dynamic polymorphism
-        List colors = new ArrayList();
+//        raw type
+        List numeric = new ArrayList();
+        numeric.add(new Object());
+        numeric.add(new ArrayList<Object>());
+        List<Number> colorsList = new ArrayList<Number>();
+        colorsList.add(new Integer(5));
+//        colorsList.add(new Boolean(true));
+        colorsList.add(5);
+        System.out.println(colorsList);
+
+        AbstractList<Object> colors = new ArrayList<>();
         colors.add("Green");
         ArithmeticException arithmeticException = new ArithmeticException();
         colors.add(arithmeticException);

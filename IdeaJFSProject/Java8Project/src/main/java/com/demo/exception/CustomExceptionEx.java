@@ -2,6 +2,7 @@ package com.demo.exception;
 
 public class CustomExceptionEx {
     public static void main(String[] args) {
+//        throw new CartEmptyException("Cart cannot be empty!");
         try{
             useCart();
         }
@@ -47,7 +48,9 @@ private static void useCart() throws CartEmptyException {
 //    }
 //}
 //checked exception
-class CartEmptyException extends  Exception{
+//class CartEmptyException extends  Exception{
+//unchecked exception
+    class CartEmptyException extends  RuntimeException{
     public CartEmptyException(String message) {
 //
         super(message);

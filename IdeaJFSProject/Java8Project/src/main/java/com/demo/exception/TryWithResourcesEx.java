@@ -10,7 +10,6 @@ public class TryWithResourcesEx {
 
     private static void useScanner() {
 //         pre-java 7
-
         try {
             Scanner scanner = new Scanner(System.in);
             System.out.println("enter num ");
@@ -18,7 +17,7 @@ public class TryWithResourcesEx {
             int number = Integer.parseInt(numberString);
             System.out.println("entered number multiplied " + (number*number));
             scanner.close();
-        }catch ( NumberFormatException exception) {
+//        }catch ( NumberFormatException exception) {
             System.out.println("Enter a valid number...");
         }
         catch ( Exception exception) {
