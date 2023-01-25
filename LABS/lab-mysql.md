@@ -28,4 +28,8 @@
 
 :question: What is the average length of films by category?
 
-:question: Which film categories are longer than the average lenght of all the films?
+:question: Which film categories are longer than the average length of all the films?
+
+:question: As a user I would like to display the movie title, language and category in the below format.
+FILM_TITLE FILM_LANGUAGE  FILM_CATEGORY   
+FREE SOLO  ENGLISH        ACTION
