@@ -2,6 +2,7 @@
 
 :point_right: Use the Sakila Database
 :point_right: Analyze the database tables to solve the queries below.  
+:point_right: https://downloads.mysql.com/docs/sakila-db.zip  
 
 
 :question: Which actors have the first name 'Scarlett'
