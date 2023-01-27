@@ -7,9 +7,10 @@
     <bean name="creditPayment" class="com.demo.spring.service.CreditPaymentImpl" scope="singleton"/>
 <!--    <bean name="debitPayment" class="com.demo.spring.service.DebitPaymentImpl"/>-->
 <!--        <bean name="debitPayment" class="com.demo.spring.service.DebitPaymentInternationalImpl"/>-->
-
+    <bean name="bill" class="com.demo.spring.service.Bill"/>
 <!--CONSTRUCTOR BASED DI-->
     <bean name="paymentGatewayService" class="com.demo.spring.service.PaymentGatewayServiceImpl">
         <constructor-arg index="0" ref="creditPayment"/>
+        <constructor-arg index="1" ref="bill"/>
     </bean>
 </beans>

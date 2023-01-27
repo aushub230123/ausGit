@@ -22,10 +22,11 @@ creditPayment();
         System.out.println("Bean Ref : " + creditPayment);
         System.out.print("Directly : ");
         creditPayment.pay();
-        creditPayment = applicationContextIOCContainer.getBean("creditPayment",Payment.class);
-        System.out.println("Bean Ref : " + creditPayment);
+        PaymentGatewayServiceImpl paymentGatewayService = applicationContextIOCContainer.getBean("paymentGatewayService",PaymentGatewayServiceImpl.class);
+//        System.out.println("Bean Ref : " + paymentGatewayService);
         System.out.print("Service : ");
-        creditPayment.pay();
+        paymentGatewayService.pay();
+        paymentGatewayService.tripDetials();
         //       Directly creating the payment gateway service
 //       Manually injecting the dependency / digitalPayment
 //        PaymentGatewayService paymentGatewayService = new PaymentGatewayServiceImpl(creditPayment);
