@@ -9,21 +9,30 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class IOCApp {
     public static void main(String[] args) {
-//creditPayment();
-debitPayment();
+creditPayment();
+//debitPayment();
     }
     private static void creditPayment() {
 //        Payment creditPayment = new CreditPaymentImpl();
         // Get the instance from the IOC Container
         Payment creditPayment = null;
-        ApplicationContext applicationContextIOCContainer = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ApplicationContext applicationContextIOCContainer = new ClassPathXmlApplicationContext("spring-beans.xml");
 //        creditPayment = (Payment)  applicationContextIOCContainer.getBean("creditPayment");
         creditPayment = applicationContextIOCContainer.getBean("creditPayment",Payment.class);
+        System.out.println("Bean Ref : " + creditPayment);
+        System.out.print("Directly : ");
+        creditPayment.pay();
+        creditPayment = applicationContextIOCContainer.getBean("creditPayment",Payment.class);
+        System.out.println("Bean Ref : " + creditPayment);
+        System.out.print("Service : ");
         creditPayment.pay();
         //       Directly creating the payment gateway service
 //       Manually injecting the dependency / digitalPayment
 //        PaymentGatewayService paymentGatewayService = new PaymentGatewayServiceImpl(creditPayment);
-//        paymentGatewayService.pay();
+
+//        PaymentGatewayService paymentGatewayService = new PaymentGatewayServiceImpl();
+//        PaymentGatewayService paymentGatewayService = applicationContextIOCContainer.getBean("paymentGatewayService",PaymentGatewayServiceImpl.class);
+//                paymentGatewayService.pay();
     }
     private static void debitPayment() {
 //        Payment creditPayment = new CreditPaymentImpl();
