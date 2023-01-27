@@ -5,6 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Java8Project/pom.xml" />
+        <option value="$PROJECT_DIR$/LD1-IOC-spring-core/pom.xml" />
       </list>
     </option>
   </component>
