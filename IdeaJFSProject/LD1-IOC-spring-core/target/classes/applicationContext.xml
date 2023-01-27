@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    Payment creditPayment = new CreditPaymentImpl();-->
+<!--    creditPayment.pay();-->
+    <bean name="creditPayment" class="com.demo.spring.service.CreditPaymentImpl"/>
+<!--    <bean name="debitPayment" class="com.demo.spring.service.DebitPaymentImpl"/>-->
+        <bean name="debitPayment" class="com.demo.spring.service.DebitPaymentInternationalImpl"/>
+</beans>

@@ -1,13 +1,14 @@
-package com.demo.service;
+package com.demo.spring.service;
 
-public class PaymentGatewayServiceImpl implements  PaymentGatewayService{
-    Payment payment;
+//PAYMENTGATEWAYSERVICE NATIONAL
+public class PaymentGatewayServiceInternationalImpl implements PaymentGatewayService {
+    public Payment payment;
 
-    public PaymentGatewayServiceImpl() {
+    public PaymentGatewayServiceInternationalImpl() {
 
     }
 // The constructor receives the dependency // CONSTRUCTOR BASED DEPENDENCY INJECTION
-    public PaymentGatewayServiceImpl(Payment payment) {
+    public PaymentGatewayServiceInternationalImpl(Payment payment) {
         //if we have a different implementation like ManualPaymentImpl
 //        this.payment = new ManualPaymentImpl();
 //        this.digitalPayment = new DigitalPaymentImpl();

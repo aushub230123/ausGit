@@ -1,4 +1,4 @@
-package com.demo.service;
+package com.demo.nospring.service;
 
 public class CreditPaymentImpl implements   Payment {
     public void pay() {

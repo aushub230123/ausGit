@@ -1,8 +1,7 @@
 package com.demo.nospring;
 
-import com.demo.service.*;
-import com.demo.service.Payment;
-import com.demo.service.CreditPaymentImpl;
+import com.demo.nospring.service.*;
+import com.demo.nospring.service.*;
 
 /**
  * Hello world!
@@ -16,12 +15,13 @@ public class App
         System.out.println( "Traditional / No IOC / No Spring" );
 //        Directly create and access digital payment
 //        creditPayment();
-        debitPayment();
+//        debitPayment();
+        walletPayment();
     }
 
     private static void creditPayment() {
         Payment creditPayment = new CreditPaymentImpl();
-//        payment.pay();
+        creditPayment.pay();
 
 //       Directly creating the payment gateway service
 //       Manually injecting the dependency / digitalPayment
@@ -37,6 +37,13 @@ public class App
         PaymentGatewayService paymentGatewayService = new PaymentGatewayServiceImpl();
         //       Manually injecting the dependency / debitPayment / SETTER BASED DI
         ((PaymentGatewayServiceImpl)paymentGatewayService).setPayment(debitPayment);
+        paymentGatewayService.pay();
+    }
+
+    private static void walletPayment() {
+        Payment walletPayment = new WalletPaymentImpl();
+        PaymentGatewayService paymentGatewayService = new PaymentGatewayServiceInternationalImpl();
+        ((PaymentGatewayServiceInternationalImpl)paymentGatewayService).payment = walletPayment;
         paymentGatewayService.pay();
     }
 }
