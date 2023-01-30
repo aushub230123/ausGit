@@ -38,7 +38,6 @@ public class ResultSetMetaDataEx {
                 for(int i=1; i<=resultSetMetaData.getColumnCount(); i++) {
                     System.out.println("Name : " + resultSetMetaData.getColumnName(i) + " > " + resultSetMetaData.getColumnTypeName(i));
                 }
-
                 System.out.println("DB INFO");
                 DatabaseMetaData databaseMetaData = connection.getMetaData();
                 System.out.println("Driver " + databaseMetaData.getDriverName());

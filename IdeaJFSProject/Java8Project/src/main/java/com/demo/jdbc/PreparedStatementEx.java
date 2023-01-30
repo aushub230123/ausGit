@@ -1,3 +1,5 @@
+package com.demo.jdbc;
+
 import java.sql.*;
 
 public class PreparedStatementEx {
