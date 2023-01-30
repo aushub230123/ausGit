@@ -1,4 +1,4 @@
-package com.demo.spring.service;
+package com.demo.springxmlconfig.service;
 
 //PAYMENTGATEWAYSERVICE NATIONAL
 public class PaymentGatewayServiceImpl implements PaymentGatewayService {
@@ -16,6 +16,12 @@ public class PaymentGatewayServiceImpl implements PaymentGatewayService {
         this.bill = bill;
     }
 
+    public PaymentGatewayServiceImpl(Payment payment) {
+        //if we have a different implementation like ManualPaymentImpl
+//        this.payment = new ManualPaymentImpl();
+//        this.digitalPayment = new DigitalPaymentImpl();
+        this.payment = payment;
+    }
 //    The setter receives the dependency // SETTER BASED DEPENDENCY INJECTION
     public void setPayment(Payment payment){
         this.payment = payment;

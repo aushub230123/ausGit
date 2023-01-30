@@ -1,9 +1,7 @@
-package com.demo.spring;
+package com.demo.springxmlconfig;
 
-import com.demo.spring.service.CreditPaymentImpl;
-import com.demo.spring.service.Payment;
-import com.demo.spring.service.PaymentGatewayService;
-import com.demo.spring.service.PaymentGatewayServiceImpl;
+import com.demo.springxmlconfig.service.Payment;
+import com.demo.springxmlconfig.service.PaymentGatewayServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -16,7 +14,7 @@ creditPayment();
 //        Payment creditPayment = new CreditPaymentImpl();
         // Get the instance from the IOC Container
         Payment creditPayment = null;
-        ApplicationContext applicationContextIOCContainer = new ClassPathXmlApplicationContext("spring-beans.xml");
+        ApplicationContext applicationContextIOCContainer = new ClassPathXmlApplicationContext("spring-beans.xmll");
 //        creditPayment = (Payment)  applicationContextIOCContainer.getBean("creditPayment");
         creditPayment = applicationContextIOCContainer.getBean("creditPayment",Payment.class);
         System.out.println("Bean Ref : " + creditPayment);
@@ -39,7 +37,7 @@ creditPayment();
 //        Payment creditPayment = new CreditPaymentImpl();
         // Get the instance from the IOC Container
         Payment debitPayment = null;
-        ApplicationContext applicationContextIOCContainer = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ApplicationContext applicationContextIOCContainer = new ClassPathXmlApplicationContext("applicationContext.xmll");
 //        creditPayment = (Payment)  applicationContextIOCContainer.getBean("creditPayment");
         debitPayment = applicationContextIOCContainer.getBean("debitPayment",Payment.class);
         debitPayment.pay();

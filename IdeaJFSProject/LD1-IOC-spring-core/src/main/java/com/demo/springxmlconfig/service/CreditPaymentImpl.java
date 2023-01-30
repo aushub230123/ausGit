@@ -1,4 +1,4 @@
-package com.demo.spring.service;
+package com.demo.springxmlconfig.service;
 
 public class CreditPaymentImpl implements Payment {
     public void pay() {
