@@ -6,7 +6,6 @@ import java.util.Map;
 public class SelectStatementEx {
     public static void main(String[] args) {
         getActors();
-
     }
 //    GOAL IS TO UNDERSTAND THE WORKING OF ORM
     public Map<Integer,ActorModel> getActorsAsMap() {
