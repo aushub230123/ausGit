@@ -2,7 +2,13 @@ package com.demo.jdbc;
 
 import java.sql.*;
 import java.util.Map;
-
+// 1. DATATYPE MISMATCH
+// 2. OOPS VS RELATIONAL (INHERITANCE) / (PRIMARY KEY / FOREIGN KEY)
+// 3. ACTOR (actorID, actorName, ......) / AUTOGENERATION (SEQUENCE)
+// 4. CHECKED EXCEPTIONS
+// 5. BOILER PLATE CODE
+// 6. SQL QUERIES ARE EMBEDDED AS STRINGS
+// ORM HIBERNATE.. SOLUTION
 public class SelectStatementEx {
     public static void main(String[] args) {
         getActors();
@@ -36,7 +42,9 @@ public class SelectStatementEx {
 //            6. TRAVERSE THROUGH THE RESULTS
             //            Moves the cursor forward one row from its current position.
             while(resultSet.next()){
+
                 int actorId = resultSet.getInt("ACTOR_ID");
+//                int mobileNumber = resultSet.getInt("ACTOR_MOBILE");
                 String firstName = resultSet.getString(2);
                 String lastName = resultSet.getString("LAST_NAME");
                 System.out.println("Actor details : " + actorId + "\t" + firstName + "\t" + lastName + "\t");
