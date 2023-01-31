@@ -200,3 +200,44 @@ public class PreparedStatementEx {
 }
 
 ```
+
+:three: _Using CallableStatement fetch details of FILM TITLE, LANGUAGE AND CATEGORY by passing LANGUAGE as input_  
+
+```java
+private static void getMoviesWithCategoryAndLanguage() {
+        //        Unhandled exception: java.lang.ClassNotFoundException (checked exception)
+        Connection connection = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            System.out.println("Driver loaded successfully.....");
+//            https <protocol> : set of rules governing the transfer of data
+//            <protocol><subprotocol><url>
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/SAKILA","root","mysql");
+
+            // CREATE CALLABLE STATEMENT
+            // PASS THE LANGUAGE AS INPUT PARAMETER
+            // FETCH THE RESULTS
+
+            while(resultSet.next()){
+             System.out.println("Movie details : " + resultSet.getString(1) + "\t" + resultSet.getString(2) + "\t" + resultSet.getString(3) + "\t");
+            }
+        }
+        catch (ClassNotFoundException classNotFoundException) {
+            System.out.println("Missing the Driver class!" + classNotFoundException);
+        } catch (SQLException e) {
+            System.out.println("Error connecting to SQL " + e);
+        }
+        finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.out.println("Unable to close the connection " + e);
+            }
+        }
+    }
+```
+```sql
+-- CREATE PROCEDURE GET_MOVIE_DETAILS1 
+-- WHICH ACCEPTS THE LANGUAGE AS THE INPUT
+-- AND SELECT'S FILM TITLE, LANGUAGE AND CATEGORY FOR THE LANGUAGE.
+```
