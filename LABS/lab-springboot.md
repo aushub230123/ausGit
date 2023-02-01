@@ -33,22 +33,22 @@ public class EmployeeController {
         return  htmlOutput;
     }
 
-    //    JAVA OBJECT SERIALIZED INTO JSON
-    @ResponseBody
-    @GetMapping(value = "/employees", produces = {MediaType.APPLICATION_XML_VALUE})
-    public EmployeeModel getEmployees(){
+    //    JAVA OBJECT SERIALIZED INTO XML FORMAT
+    // ADD NECESSARY ANNOTATOINS HERE
+    public EmployeeModel getEmployee(){
         EmployeeModel employeeModel = new EmployeeModel(1,"Ben",5000);
         return employeeModel;
     }
-    //    IP : RETURN A LIST OF 3-5 EMPLOYEES IN JSON FORMAT
-    // ADD NECESSARY ANNOTATOINS HERE
-    public List getEmployeeList() {
-    // IMPLEMENT CODE HERE
-
+   @ResponseBody
+   @GetMapping(value = "/employees-list")
+public List getEmployees() {
+       List<EmployeeModel> employeeModelList = new ArrayList<>();
+       employeeModelList.add(new EmployeeModel(1,"Ben",5000));
+       employeeModelList.add(new EmployeeModel(2,"Benny",50000));
         return employeeModelList;
-    }
-    //    IP : RETURN A MAP OF 3-5 EMPLOYEES (EMPLOYEEID : KEY, EMPLOYEE INSTANCE : VALUE) IN JSON FORMAT
-    @GetMapping("/employees-map")
+   }
+    //    IP : RETURN A MAP OF 3-5 EMPLOYEES (EMPLOYEEID : KEY, EMPLOYEE INSTANCE : VALUE) IN XML FORMAT
+    @GetMapping("/employees-map-xml")
     // IMPLEMENT CODE HERE
     public Map getEmployeeMap() {
         return map;
@@ -56,7 +56,8 @@ public class EmployeeController {
 
 
     //   EMPLOYEES OF DEPARTMENTS IT, FINANCE
-    //   LIST OF TWO MAPS (EACH MAP WILL CONTAIN THREE EMPLOYEES OF THE DEPARTMENT)
+    //   LIST OF TWO MAPS (EACH MAP WILL CONTAIN THREE EMPLOYEES OF A DEPARTMENT) IN JSON FORMAT
+    // CONSIDER HAVING TWO DEPARTEMENTS.
        // ADD NECESSARY ANNOTATOINS HERE
     public List<Map<Integer,EmployeeModel>> getDepartmentWiseEmployees() {
         return listMap;
