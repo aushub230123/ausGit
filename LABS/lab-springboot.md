@@ -14,6 +14,7 @@ public class ActorController {
 
 ```
 :two: _Aalayze the following controller and perform the required implementation_  
+:bell: Use MediaType Enumeration and add the required dependnecy for XML Serialization.  
 
 ```java
 @Controller
