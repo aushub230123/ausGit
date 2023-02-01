@@ -6,6 +6,6 @@
 - use composite foreign key for MovieActors
 
 :point_right: Files
-DSSDbDDL.sql > create, alter, drop
-DSSDbDML.sql > insert, update, delete
-DSSDbProcs.sql > getDetailsByReviewId(reveiwID)
+DSSDbDDL.sql > create, alter, drop  
+DSSDbDML.sql > insert, update, delete  
+DSSDbProcs.sql > getDetailsByReviewId(reveiwID)  
