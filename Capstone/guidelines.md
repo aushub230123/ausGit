@@ -8,3 +8,4 @@
 :point_right: Files
 DSSDbDDL.sql > create, alter, drop
 DSSDbDML.sql > insert, update, delete
+DSSDbProcs.sql > getDetailsByReviewId(reveiwID)
