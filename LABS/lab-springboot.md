@@ -76,3 +76,7 @@ spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true;
 
 ```
+:four: _EXPLORE : Create SpringBootJPAEclipseLinkJPA project for connnecting using Eclipse link_  
+
+
+:five: _US5 : Setup the Actor Module_  
