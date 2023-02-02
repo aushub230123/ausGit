@@ -32,4 +32,5 @@ public class EclipseLinkJpaConfiguration extends JpaBaseConfiguration {
         map.put(PersistenceUnitProperties.DDL_GENERATION,"drop-and-create-tables");
         return map;
     }
+
 }
