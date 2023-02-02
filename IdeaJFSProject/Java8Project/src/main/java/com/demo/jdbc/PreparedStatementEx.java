@@ -9,6 +9,9 @@ public class PreparedStatementEx {
 
     private static void preparedStatementPerformanceTest() {
         //Load the driver class
+//     PROBLEM : DATABASE CONFIGURATION IS IN THE CODE.
+//        SOLUTION : IN HIBERNATE WE EXTERNALIZED THE CONFIGURATION IN A SEPARATE FILE NAMED AS PERSISTENCE.XML
+//        DATABASE CONFIGURATION ENCAPSULATED INSIDE THE PERSISTENCE UNIT.
         try {
             System.out.println("Loading the the driver!");
             Class.forName("com.mysql.cj.jdbc.Driver");

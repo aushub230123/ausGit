@@ -25,7 +25,7 @@ public class SelectStatementEx {
         Connection connection = null;
         try {
 //            1. DRIVER LOADED
-            Class.forName("com.mysql.cj.jdbc.Driver");
+//            Class.forName("com.mysql.cj.jdbc.Driver");
             System.out.println("Driver loaded successfully.....");
             //https <protocol> : set of rules governing the transfer of data
 //            <protocol><subprotocol><url>
@@ -49,9 +49,11 @@ public class SelectStatementEx {
                 String lastName = resultSet.getString("LAST_NAME");
                 System.out.println("Actor details : " + actorId + "\t" + firstName + "\t" + lastName + "\t");
             }
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (SQLException e) {
+        }
+//        catch (ClassNotFoundException e) {
+//            throw new RuntimeException(e);
+//        }
+        catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }

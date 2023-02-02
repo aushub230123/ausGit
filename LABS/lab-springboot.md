@@ -66,3 +66,13 @@ public List getEmployees() {
 }
 
 ```
+:three: _Migrate the application.properties to yaml format_ 
+```properties
+spring.datasource.url="jdbc:mysql://localhost:3306/LIBRARYDB?useSSL=false";
+spring.datasource.username=root
+spring.datasource.password=mysql
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL57Dialect
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true;
+
+```

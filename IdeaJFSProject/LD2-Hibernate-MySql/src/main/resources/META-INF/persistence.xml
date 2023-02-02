@@ -17,4 +17,8 @@
             <property name="hibernate.hbm2ddl.auto" value="create"/>
         </properties>
     </persistence-unit>
+
+<!--  CODE TO CONFIGURATION.... BENEFIT.
+FROM XML > .PROPERTIES > YML-->
+<!--    from xml > properties > yml-->
     </persistence>
