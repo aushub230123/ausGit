@@ -4,7 +4,11 @@ import javax.persistence.*;
 
 //Employee named as EmployeeModel for understanding Entities later.....
 @Entity(name="EMPLOYEES")
-public class EmployeeModel {
+public class EmployeeEntity {
+
+    //AUTO_INCRMENT
+    //SEQUENCE
+    //TABLE
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name= "EMPLOYEE_ID")
@@ -13,9 +17,9 @@ public class EmployeeModel {
     private String name;
     private int salary;
 
-    public EmployeeModel(){
+    public EmployeeEntity(){
     }
-    public EmployeeModel(int id, String name, int salary) {
+    public EmployeeEntity(int id, String name, int salary) {
         this.id = id;
         this.name = name;
         this.salary = salary;

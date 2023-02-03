@@ -19,8 +19,12 @@ public class Library {
     @Column(name="NAME")
     private String name;
 
+    public List<Author> getAuthorArrayList() {
+        return authorArrayList;
+    }
+
     //PRIMARY KEY
-    @OneToMany(mappedBy = "library")
+    @OneToMany(mappedBy = "library", fetch = FetchType.EAGER)
     private List<Author>  authorArrayList = new ArrayList<>();
     public Library() {
 

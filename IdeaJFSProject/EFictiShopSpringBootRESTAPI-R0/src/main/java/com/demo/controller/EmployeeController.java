@@ -10,7 +10,8 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+//Bean vs Component vs (Controller, RestController, Service, Repository)
+// Spring - Angular has components
 //@RestController
 @Controller
 @RequestMapping("/api/v0")
