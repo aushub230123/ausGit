@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    The div below is the container for accomodating the new input.
+    <div id="containerDiv">
+    </div>
+
+    <br><br><br>
+    <script>
+        function manipulateDOM()
+        {
+        // dynamically create input field
+        var dynamicInput = document.createElement("input");
+        // var dynamicLabel = document.createElement("label");
+        // dynamically set the attributes
+        dynamicInput.setAttribute("type","text");
+        dynamicInput.setAttribute("value","This is a dynamically generated input by DOM manipulation");
+        // set the style
+        dynamicInput.setAttribute("style","color:green");
+
+        var containerDiv = document.getElementById("containerDiv");
+        containerDiv.appendChild(dynamicInput);
+        }
+        </script>
+    <form method="get" onsubmit="return false"><br><br>
+    <input type="text" value="Some text here!" style="color:red"><br>
+    <input type="radio"/>Veg
+    <button onclick="manipulateDOM()">Dynamically add inputs</button><br>
+</form>
+<br><br>
+
+
+</body>
+</html>
