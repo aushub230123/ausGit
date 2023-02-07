@@ -67,4 +67,18 @@ export class ProductListComponent {
 }
 ```
 
+:beginner: _**Data Binding**_  
+
+
+:point_right: {{}} string interpolation (reads data from ts and puts it over the template)  
+
+:point_right: [] property binding  
+```html
+<a [title]="productItem.name + ' details'">  {{productItem.name}}</a>
+```
+:point_right: **Event Binding**  
+```html
+ <button type="button" (click)="share()">
+```
+
 
