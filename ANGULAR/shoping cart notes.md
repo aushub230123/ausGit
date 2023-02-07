@@ -50,3 +50,21 @@ interface Product {
 
 - Read a property from ts and render it on the package
 - String iterpolation {{}}
+
+:writing_hand: **_Explore the product-list_**
+- product-list.component.ts
+
+
+```ts
+import {productsObject} from 'productsFileIgnoringTSextension';
+export class ProductListComponent {
+    productVar = productsObject;
+}
+
+import {products} from 'products';
+export class ProductListComponent {
+    products = products;
+}
+```
+
+
