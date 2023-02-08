@@ -81,4 +81,20 @@ export class ProductListComponent {
  <button type="button" (click)="share()">
 ```
 
+:keyboard: **Construct the module**  
+```ts
+
+import {BrowserModule} from '@angular/platform-browser'
+import {NgModule} from '@angular/core'
+import {ProductAlertsComponent} from './products-alert/products-alert.component';
+@NgModule({
+    imports : [BrowserModule] 
+    declarations : [AppComponent, TopBarComponent, ProductListComponent, ProductAlertsComponent],
+    bootstrap : [AppComponent]
+})
+export class AppModule {
+}
+```
+
+
 

@@ -32,7 +32,8 @@ CUSTOMERID, FIRSTNAME, LASTNAME, EMAIL
 </div>
 ```
 
-
-  
-
-
+:one: _US2_  
+:bell: Steps : Extend _US1_
+1. Create OfferComponent
+2. Render OfferComponent in the CustomerDataComponent with a Offer Button for address_id between 10 and 20.
+3. Button should be "Avail Offer" or "No Offer"
