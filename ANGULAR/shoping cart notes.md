@@ -96,5 +96,126 @@ export class AppModule {
 }
 ```
 
+:computer: **Configuring the router**  
+
+1. Import the Router Module
+```ts
+    import {RouterModule} from '@angular/router';
+    imports : [BrowserModule,
+    RouterModule] 
+```
+
+2. Configure the Routes
+```ts
+    import {RouterModule} from '@angular/router';
+    imports : [BrowserModule,
+    RouterModule.forRoot([
+        path:'',component: ProductListComponent,
+        path:'products/:productId',component:ProductDetailsComponent
+    ])] 
+```
+
+3. Associate the output of the router to the HTML template
+```html
+<div class="container">
+  <!-- <h1>App root</h1> -->
+  <!-- <router-outlet></router-outlet> -->
+  <!-- app-product-list gets rendered here....-->
+  <router-outlet></router-outlet>
+</div>
+```
+
+4. Configure the router link for navigation
+
+```html
+ <a [title]="productItem.name + ' details'"
+ [routerLink]="['./product',product.id]"> {{ productItem.name }}</a>
+```
+
+5. Implement Product Details
 
 
+```ts
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {ProductAlertsComponent} from './products-alert/products-alert.component';
+@NgModule({
+    imports : [BrowserModule,
+    RouterModule.forRoot([
+        path:'',component: ProductListComponent
+    ])] 
+    declarations : [AppComponent, TopBarComponent, ProductListComponent, ProductAlertsComponent],
+    bootstrap : [AppComponent]
+})
+export class AppModule {
+}
+```
+6. Process the information from the router in the product details page.
+```ts
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Product, products } from '../child/child1/productsFileModule';
+@Component({
+  selector: 'app-product-details',
+  templateUrl: './product-details.component.html',
+  styleUrls: ['./product-details.component.css']
+})
+export class ProductDetailsComponent implements OnInit {
+  product : Product | undefined;
+ constructor(private route : ActivatedRoute){
+// CALLED FIRST 
+console.log("cons");
+ }
+//  LIFE-CYCLE HOOK
+ ngOnInit() {
+  //  CALLED NEXT
+  console.log("ngOnInit")
+  const routeParams = this.route.snapshot.paramMap;
+  const productIdFromRoute = Number(routeParams.get('productId'));
+  this.product = products.find(product => product.id === productIdFromRoute );
+}
+}
+
+```
+
+7. Render the fetched product
+```html
+<h2>Product Details</h2>
+<!-- <div *ngIf="product">
+  <div>
+    <h3>{{product?.name}}</h3>
+      <h4>{{product?.price}}</h4>
+      <p>{{product?.description}}</p> 
+</div> -->
+<div *ngIf="product">
+  <div>
+    <h3>{{product.name}}</h3>
+      <h4>{{product.price}}</h4>
+      <p>{{product.description}}</p> 
+</div>
+```
+8. Create the service
+```sh
+ng generate service cart
+ng g s cart
+```
+```ts
+@Injectable({
+  providedIn: 'root'
+})
+export class CartService {
+  items: Product[] = [];
+}
+```
+
+
+export class ProductDetailsComponent implements OnInit {
+cartService: CartService;
+  constructor(
+    private route: ActivatedRoute,
+     cartServiceParam: CartService
+  ) { 
+    this.cartService = cartServiceParam;
+  }
+}

@@ -1,0 +1,16 @@
+/* universal selector */
+* {
+    color : green;
+    font-weight: bold;
+}
+
+/* class selector */
+
+.customstyle {
+    font-style: italic;
+}
+
+/* class selector */
+#hd5 {
+    color : cyan;
+}
