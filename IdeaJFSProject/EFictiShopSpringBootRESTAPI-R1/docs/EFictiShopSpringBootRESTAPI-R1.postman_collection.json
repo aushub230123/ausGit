@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "b52fb1f4-87c3-4e1f-9929-e508ad288d80",
+		"name": "EFictiShopSpringBootRESTAPI-R1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9300/api/v1/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9300",
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "employees/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9300/api/v1/employees/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9300",
+					"path": [
+						"api",
+						"v1",
+						"employees",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "employees",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"id\": 11,\r\n        \"name\": \"BATMAN\",\r\n        \"salary\": 7000\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9300/api/v1/employees",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9300",
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "employees/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"id\": 11,\r\n        \"name\": \"GAGAMBOY\",\r\n        \"salary\": 14000\r\n    },",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9300/api/v1/employees/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9300",
+					"path": [
+						"api",
+						"v1",
+						"employees",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "employees/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9300/api/v1/employees/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9300",
+					"path": [
+						"api",
+						"v1",
+						"employees",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"adminName\" : \"Earth\",\r\n    \"email\": \"e@e.com\",\r\n    \"phone\":\"1212121212\",\r\n    \"password\":\"passtheword\",\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9300/api/v2/registrations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9300",
+					"path": [
+						"api",
+						"v2",
+						"registrations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrations/{email}/{password}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"adminName\" : \"Earth\",\r\n    \"email\": \"e@e.com\",\r\n    \"phone\":\"1212121212\",\r\n    \"password\":\"passtheword\",\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9300/api/v2/registrations/e@e.com/passtheword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9300",
+					"path": [
+						"api",
+						"v2",
+						"registrations",
+						"e@e.com",
+						"passtheword"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
