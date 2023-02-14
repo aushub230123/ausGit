@@ -4,11 +4,14 @@
     <file url="file://$PROJECT_DIR$/EFictiShopSpringBootRESTAPI-R0/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/EFictiShopSpringBootRESTAPI-R1/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/EFictiShopSpringBootRESTAPI-R1/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/EmployeeCreateMicroservice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Java8Project/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Java8Project/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LD1-IOC-spring-core/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LD1-IOC-spring-core/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LD2-Hibernate-MySql/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LD2-Hibernate-MySql/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LDM1-ServiceDiscoveryEureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LDM2-EmployeeCreateMicroservice/src/main/java" charset="UTF-8" />
   </component>
 </project>

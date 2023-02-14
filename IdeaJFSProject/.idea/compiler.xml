@@ -8,17 +8,24 @@
         <outputRelativeToContentRoot value="true" />
         <module name="LD2-Hibernate-MySql" />
         <module name="EFictiShopSpringBootRESTAPI-R0" />
+        <module name="LDM1-ServiceDiscoveryEureka" />
         <module name="LD1-IOC-spring-core" />
+        <module name="EmployeeCreateMicroservice" />
         <module name="Java8Project" />
+        <module name="LDM2-EmployeeCreateMicroservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="EFictiShopSpringBootRESTAPI-R1" target="1.8" />
+      <module name="EmployeeCreateMicroservice" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="EFictiShopSpringBootRESTAPI-R0" options="-parameters" />
+      <module name="EmployeeCreateMicroservice" options="-parameters" />
+      <module name="LDM1-ServiceDiscoveryEureka" options="-parameters" />
+      <module name="LDM2-EmployeeCreateMicroservice" options="-parameters" />
     </option>
   </component>
 </project>
