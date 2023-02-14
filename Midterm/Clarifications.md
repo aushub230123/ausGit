@@ -6,7 +6,7 @@ Poninters for Midterm
 - Create docs folder inside project and store the postman collection.
 
 Zip File : Midterm Solution
-mail to : Samarth.Kalavadia@cognixia.com
+mail to : Samarth
 cc to : livegit1@gmail.com
 
 Well appreciated : 
