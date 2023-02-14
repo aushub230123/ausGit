@@ -1,0 +1,14 @@
+# configuration related to spring boot application
+spring:
+  application:
+    name: eureka
+server:
+    port: 8761
+
+# configuration related to eureka
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+instance:
+    localhost
