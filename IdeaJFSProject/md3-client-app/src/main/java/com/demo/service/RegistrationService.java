@@ -27,7 +27,7 @@ public class RegistrationService{
 		return loggedIn;
 	}
 	public String getServiceInstance() {
-	String serverInstancePortString = registrationProxy.getServiceInstance();
+	String serverInstancePortString = registrationProxy.getServiceInstanceThroughProxy();
 	return serverInstancePortString;
 	}
 

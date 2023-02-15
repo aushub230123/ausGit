@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name="registration-service")
 public interface RegistrationProxy {
 	@GetMapping("/api/v2/instance")
-	public String getServiceInstance();
+	public String getServiceInstanceThroughProxy();
 	@GetMapping("/api/v2/registrations/{email}/{password}")
 	public Boolean login(@PathVariable String email, @PathVariable String password);
 	}

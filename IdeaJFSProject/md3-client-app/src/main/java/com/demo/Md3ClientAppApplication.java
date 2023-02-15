@@ -30,7 +30,7 @@ public class Md3ClientAppApplication {
 			System.out.println("Error logging in.. Please check credentials!");
 		}
 		
-		emailIdString = "admin1@email.com";
+		emailIdString = "a@a.com";
 		 passwordString = "passtheword";
 		 loggedIn = registrationService.login(emailIdString, passwordString);
 		if(loggedIn) {
@@ -40,5 +40,4 @@ public class Md3ClientAppApplication {
 			System.out.println("Error logging in.. Please check credentials!");
 		}
 	}
-
 }
