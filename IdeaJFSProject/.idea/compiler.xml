@@ -11,13 +11,19 @@
         <module name="LDM1-ServiceDiscoveryEureka" />
         <module name="LD1-IOC-spring-core" />
         <module name="EmployeeCreateMicroservice" />
+        <module name="md4-client-service" />
         <module name="Java8Project" />
+        <module name="md2-registration-service" />
         <module name="LDM2-EmployeeCreateMicroservice" />
+        <module name="md3-client-app" />
+        <module name="md1-service-discovery" />
+        <module name="md5-api-gateway-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="EFictiShopSpringBootRESTAPI-R1" target="1.8" />
       <module name="EmployeeCreateMicroservice" target="1.8" />
+      <module name="md3-client-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -26,6 +32,12 @@
       <module name="EmployeeCreateMicroservice" options="-parameters" />
       <module name="LDM1-ServiceDiscoveryEureka" options="-parameters" />
       <module name="LDM2-EmployeeCreateMicroservice" options="-parameters" />
+      <module name="md1-service-discovery" options="-parameters" />
+      <module name="md2-registration-service" options="-parameters" />
+      <module name="md3-client-app" options="-parameters" />
+      <module name="md3-client-service" options="-parameters" />
+      <module name="md4-client-service" options="-parameters" />
+      <module name="md5-api-gateway-service" options="-parameters" />
     </option>
   </component>
 </project>

@@ -13,5 +13,15 @@
     <file url="file://$PROJECT_DIR$/LD2-Hibernate-MySql/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LDM1-ServiceDiscoveryEureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LDM2-EmployeeCreateMicroservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/md1-service-discovery/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/md1-service-discovery/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/md2-registration-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/md2-registration-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/md3-client-app/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/md3-client-app/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/md4-client-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/md4-client-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/md5-api-gateway-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/md5-api-gateway-service/src/main/resources" charset="UTF-8" />
   </component>
 </project>

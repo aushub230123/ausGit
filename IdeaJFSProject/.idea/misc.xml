@@ -11,6 +11,11 @@
         <option value="$PROJECT_DIR$/ToDel/pom.xml" />
         <option value="$PROJECT_DIR$/LDM1-ServiceDiscoveryEureka/pom.xml" />
         <option value="$PROJECT_DIR$/LDM2-EmployeeCreateMicroservice/pom.xml" />
+        <option value="$PROJECT_DIR$/md1-service-discovery/pom.xml" />
+        <option value="$PROJECT_DIR$/md2-registration-service/pom.xml" />
+        <option value="$PROJECT_DIR$/md3-client-app/pom.xml" />
+        <option value="$PROJECT_DIR$/md4-client-service/pom.xml" />
+        <option value="$PROJECT_DIR$/md5-api-gateway-service/pom.xml" />
       </list>
     </option>
   </component>
