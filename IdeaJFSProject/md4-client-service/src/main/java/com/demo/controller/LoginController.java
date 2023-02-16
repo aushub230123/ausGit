@@ -14,7 +14,7 @@ public class LoginController {
 	@Autowired
 	private RegistrationService registrationService;
 
-	@GetMapping("/api/v2/instance")
+	@GetMapping("/instance")
 	public String getServiceInstance() {
 		String serverInstancePortString = registrationService.getServiceInstance();	
 		return serverInstancePortString;

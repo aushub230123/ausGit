@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 // WITHOUT API GATEWAY
 //Directly invoking a service instance
 //@FeignClient(name="registration-service" , url = "http://localhost:9302")
-@FeignClient(name="api-gateway-service")
+@FeignClient(name="registration-service")
 public interface RegistrationProxy {
-	@GetMapping("registration-service/api/v2/instance")
+	@GetMapping("/api/v2/instance")
 	public String getServiceInstance();
-	@GetMapping("registration-service/api/v2/registrations/{email}/{password}")
+	@GetMapping("/api/v2/registrations/{email}/{password}")
 	public Boolean login(@PathVariable String email, @PathVariable String password);
 	}
