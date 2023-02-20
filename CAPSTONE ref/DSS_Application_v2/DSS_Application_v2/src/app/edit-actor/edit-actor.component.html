@@ -1,0 +1,137 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-500">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Actor details Form</h3>
+              <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  
+                <div class="row">
+                 
+                  <input type="hidden"  formControlName="actorId" class="form-control" value="0" readonly />
+                  
+                  <div class="col-md-6 mb-4">
+  
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" formControlName="firstName" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }" />
+                    <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
+                        <div *ngIf="f['firstName'].errors['required']">First Name is required</div>
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+  
+                    <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" formControlName="lastName" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }" />
+                        <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
+                            <div *ngIf="f['lastName'].errors['required']">Last Name is required</div>
+                        </div>
+  
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+  
+                    <label for="about" class="form-label">About</label>
+                        <textarea type="text" formControlName="about" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f['about'].errors }" ></textarea>
+                        <div *ngIf="submitted && f['about'].errors" class="invalid-feedback">
+                            <div *ngIf="f['about'].errors['required']">About is required</div>
+                        </div>
+                    
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+  
+                    <label for="gender" class="form-label">Gender</label>
+                    <select name="gender" formControlName="gender" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f['gender'].errors }">
+                        <option value="male" > Male</option>
+                        <option value="female"> Female</option>
+                        <option value="other"> other</option>
+                    </select>
+
+                    <div *ngIf="submitted && f['gender'].errors" class="invalid-feedback">
+                        <div *ngIf="f['gender'].errors['required']">Gender is required</div>
+                    </div>
+  
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4 pb-2">
+  
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" formControlName="age" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f['age'].errors }" />
+                    <div *ngIf="submitted && f['age'].errors" class="invalid-feedback">
+                        <div *ngIf="f['age'].errors['required']">Age is required</div>
+                        <div *ngIf="f['age'].errors['min']">Minimum age is 1 years</div>
+                        
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4 pb-2">
+  
+                    <label for="actorUrl" class="form-label">Image</label>
+                    <input type="text" accept="image/*" formControlName="actorUrl" class="form-control" 
+                            [ngClass]="{ 'is-invalid': submitted && f['actorUrl'].errors }" />
+                    <div class="small text-muted mt-2">Upload Actor image.....</div>
+                    <div *ngIf="submitted && f['actorUrl'].errors" class="invalid-feedback">
+                        <div *ngIf="f['actorUrl'].errors['required']">Image URL is required</div>
+                    </div>
+  
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4 pb-2">
+
+                    <!-- <input type="file" formControlName="movieUrl" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f['movieUrl'].errors }" />
+                    <div class="small text-muted mt-2">Upload movie image.</div>
+                    <div *ngIf="submitted && f['movieUrl'].errors" class="invalid-feedback">
+                        <div *ngIf="f['movieUrl'].errors['required']">Image date is required</div>
+                    </div> -->
+  
+                  </div>
+
+                  
+                </div>
+
+                <div class="row">
+                  <!-- <div class="col-12">
+  
+                   <label for="overview" class="form-label">Overview</label>
+                        <textarea cols="40" rows="5" type="text" formControlName="overview" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f['overview'].errors }" ></textarea>
+                        <div *ngIf="submitted && f['overview'].errors" class="invalid-feedback">
+                            <div *ngIf="f['overview'].errors['required']">Overview is required</div>                           
+                        </div>
+  
+                  </div> -->
+
+                  
+                </div>
+                <div class="row">
+                  
+                  <div class="col-md"><input class="btn btn-primary btn-lg" type="submit" value="Update" /></div>
+                  <div class="col-md"> <a routerLink="/actors" class="btn btn-primary btn-lg">Cancel</a></div>
+                  <div class="col-md"></div>
+                  <div class="col-md"></div>
+                  <div class="col-md"></div>
+                  <div class="col-md"></div>
+
+      
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

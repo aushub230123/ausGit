@@ -1,0 +1,159 @@
+   <!-- <nav class="navbar navbar-dark navbar-expand-sm" style="background-color:black" > -->
+    
+    <div class=" container" >
+        <nav class="navbar navbar-dark navbar-expand-sm"  >
+        <ul class="navbar-nav ml-auto">
+            <!-- <a routerLink="add-movie" style="font-weight: bold ;" class="nav-link btn btn-success">Add Movie</a> -->
+            <input class="form-control" type="text"  [(ngModel)]= "movieName"
+            placeholder="Enter movie name to search"> 
+            <span style="width:200px;"></span>
+            <li class="nav-item" style="margin:10px;width:250px;">
+              <a routerLink="add-movie" style="font-weight: bold ;" class="nav-link btn btn-success" style="background-color:rgb(97, 207, 170); font-weight: bold ;
+              font-size: large;color:rgba(0, 0, 0, 0.725)">Add Movie</a>
+          </li>
+        </ul>
+      
+    </nav>
+  </div> 
+ 
+ 
+  <!-- <h3 style="color:rgb(97, 207, 170);"> Movies catelogue</h3>
+  <div class="container movies-container" *ngIf="formDataLoaded">
+   
+       <ng-container *ngFor="let movie of movies | filter: movieName | paginate: { id: 'moviePagination',
+       itemsPerPage: 6,
+       currentPage: page,
+       totalItems: totalRecords }">
+
+       <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+           
+            <img src="{{movie.movieUrl}}" class="img-fluid rounded-start" alt="" title="{{movie.movieName}}" >
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{movie.movieName}}</h5>
+             
+              <p class="card-text">{{movie.overview}}</p>
+              
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+              <p class="card-text">Actor:
+                <small class="text-muted">{{getActorName(movie.actorId)}}</small>
+              </p>
+              <p class="card-text">Duration:
+                <small class="text-muted">{{movie.duration}}</small>
+              </p>
+              <p class="card-text">Genre:
+                <small class="text-muted">{{getGenreName(movie.genreId)}}</small>
+              </p>
+              <p class="card-text">Review :
+                <small class="text-muted">{{getReviewRating(movie.movieId)}}</small>
+              </p>
+              <p class="card-text">Cost:
+                <small class="text-muted">{{movie.cost}}</small>
+              </p>
+              <p class="card-text">Released on:
+                <small class="text-muted">{{movie.releaseYear}}</small>
+              </p>
+             
+              <span class="buttons">
+                   
+                <span>&nbsp;</span> 
+                <button class="btn btn-primary" (click)=updateMovie(movie.movieId)>Edit</button>
+                <span>&nbsp;</span>
+                <button class="btn btn-primary" (click)=deleteMovie(movie)>Delete</button>
+            </span>
+              
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+           <!-- <div class="card col-md-3">
+               <img src="{{movie.movieUrl}}" alt="" title="{{movie.movieName}}" >
+               <h2 style="color: blue; white-space: nowrap;text-overflow: ellipsis;max-width: 100ch;">Title:{{movie.movieName}}</h2>
+               <p><strong>Overview:</strong></p> 
+               
+               <p class="card-text"> {{movie.overview}}</p>
+            
+               <p><strong>Actor:</strong> {{getActorName(movie.actorId)}}</p>
+               <p><strong>Duration:</strong> {{movie.duration}}</p>
+               <p><strong>Genre:</strong> {{getGenreName(movie.genreId)}}</p>
+               <p><strong>Review:</strong> {{getReviewRating(movie.movieId)}}</p>
+               <p><strong>Cost:</strong> {{movie.cost}}</p>
+               <p><strong>ReleaseYear:</strong> {{movie.releaseYear}}</p>
+               
+               <span class="buttons">
+                   
+                   <span>&nbsp;</span> 
+                   <button class="btn btn-primary" (click)=updateMovie(movie.movieId)>Edit</button>
+                   <span>&nbsp;</span>
+                   <button class="btn btn-primary" (click)=deleteMovie(movie)>Delete</button>
+               </span>
+           </div >    -->
+       <!-- </ng-container>
+
+</div>
+<div>
+  <pagination-controls class="text-center" (pageChange)="page = $event" id="moviePagination"></pagination-controls>
+</div> -->
+     <h1 style="color:rgb(97, 207, 170);font-weight: bold ;" > Movies catelogue</h1>
+      <div   style="width: auto"  *ngIf="formDataLoaded">
+        <div class="container-table">
+         <table class="table table-bordered">
+            <thead>
+               <tr>
+                  <th>Movie Id</th>
+                 
+                  <th>Movie Name</th>
+                  <th>Actor Name</th>
+                  <th>Duration</th> 
+                  <th>Genre</th>
+                  <th>Image</th>
+                  <th>Overview</th>
+                  <th>Rating</th>
+                  <th>Cost</th>
+                  <th>Release year</th>
+               </tr>
+            </thead>
+            <tbody>
+              <!-- angular takes care of DOM manipulation -->
+              <!-- structural directive -->
+              <tr *ngFor="let movie of movies   | filter: movieName | paginate: { id: 'moviePagination',
+              itemsPerPage: 5,
+              currentPage: page,
+              totalItems: totalRecords }">
+               
+              <td>{{movie.movieId}}</td>
+              
+               <td>{{movie.movieName | uppercase }}</td>
+               <td>{{getActorName(movie.actorId)}}</td>
+               <td>{{movie.duration}} hrs</td>
+                <td>{{getGenreName(movie.genreId)}}</td>
+              <td><img src=" {{ movie.movieUrl }}" alt="" title="{{movie.movieName}}" style=" width: 200px; height: 200px;"></td>
+               <td><p class="card-text" >{{movie.overview}} </p></td>
+               <td>{{getReviewRating(movie.movieId)}}</td>
+               <td>{{movie.cost}}</td>
+               <td>{{movie.releaseYear}}</td>
+               <td><button (click)="deleteMovie(movie)" class="btn btn-primary"style="background-color:rgb(97, 207, 170); font-weight: bold ;
+                font-size: large;color:rgba(0, 0, 0, 0.725)" >Delete</button></td>
+               <td><button (click)="updateMovie(movie.movieId)" class="btn btn-primary" style="background-color:rgb(97, 207, 170); font-weight: bold ;
+                font-size: large;color:rgba(0, 0, 0, 0.725)">Update</button></td >
+
+                
+              </tr>
+            </tbody>
+         </table>
+         </div>
+
+         <div>
+          <pagination-controls class="text-center" (pageChange)="page = $event" id="moviePagination"></pagination-controls>
+        </div>
+      </div>   
+  
+
+     
+      

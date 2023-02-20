@@ -1,0 +1,62 @@
+   <!-- <nav class="navbar navbar-dark navbar-expand-sm" style="background-color:black" > -->
+    <div class="container" >
+      
+        <nav class="navbar navbar-dark navbar-expand-sm"  >
+        <ul class="navbar-nav">
+         <!-- <a routerLink="add-actor" style="font-weight: bold ;" class="nav-link btn btn-success">Add Actor</a> -->
+            <input class="form-control" type="text"  [(ngModel)]= "actorName"
+            placeholder="Enter actor name to search"> 
+            <span style="width:200px;"></span>
+            <li class="nav-item" style="margin:10px;width:250px;">
+              <a routerLink="add-actor" style="font-weight: bold ;" class="nav-link btn btn-success" style="background-color:rgb(97, 207, 170); font-weight: bold ;
+              font-size: large;color:rgba(0, 0, 0, 0.725)">Add Actor</a>
+          </li>
+        </ul>
+      
+    </nav>
+  </div> 
+  <h1 style="color:rgb(97, 207, 170); font-weight: bold;"> Actors catelogue</h1>
+      <div  >
+         <table class="table table-bordered">
+            <thead>
+               <tr>
+                  <th>actorId</th>
+                  
+                  <th>firstName</th>
+                  <th>lastName</th>
+                  <th>Image</th>
+                  <th>about</th>
+                  <th>gender</th>
+                  <th>age</th>
+                  
+               </tr>
+            </thead>
+            <tbody>
+              <!-- angular takes care of DOM manipulation -->
+              <!-- structural directive -->
+              <tr *ngFor="let actor of actors   | filter: actorName | paginate: { id: 'moviePagination',
+              itemsPerPage: 10,
+              currentPage: page,
+              totalItems: totalRecords }" >
+               
+              <!-- {{}} string interpolation-->
+               <td>{{actor.actorId}}</td>
+               <td>{{actor.firstName }}</td>
+               <td>{{actor.lastName}}</td>
+               <td><img img-actor src=" {{ actor.actorUrl }}" alt="" title="{{actor.firstName}} {{actor.lastName}}"  ></td>
+               <td>{{actor.about}}</td>
+               <td>{{actor.gender}}</td>
+               <td>{{actor.age}}</td>
+               
+               <td><button (click)="deleteActor(actor)" class="btn btn-primary"style="background-color:rgb(97, 207, 170); font-weight: bold ;
+                  font-size: large;color:rgba(0, 0, 0, 0.725)"  >Delete</button></td>
+               <td><button (click)="updateActor(actor.actorId)" class="btn btn-primary"style="background-color:rgb(97, 207, 170); font-weight: bold ;
+                  font-size: large;color:rgba(0, 0, 0, 0.725)"  >Update</button></td >
+              </tr>
+            </tbody>
+         </table>
+      </div>   
+      <div>
+         <pagination-controls class="text-center" (pageChange)="page = $event" id="moviePagination"></pagination-controls>
+       </div>
+      

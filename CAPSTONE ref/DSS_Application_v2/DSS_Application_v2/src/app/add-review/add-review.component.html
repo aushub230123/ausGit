@@ -1,0 +1,69 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-300">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Review  Form</h3>
+              <form class="row g-3" [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <input type="hidden"  formControlName="reviewId" class="form-control" value="0" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label for="movieId" class="form-label">Movie Name</label>
+                    
+                    <select class = "form-control" name="movieId" id="movieId" formControlName="movieId" 
+                    [ngClass]="{ 'is-invalid': submitted && f['movieId'].errors }" >
+                    <option *ngFor="let movie of movies" [ngValue]="movie.movieId" 
+                    > {{movie.movieName}}</option>
+                    
+                    <div *ngIf="submitted && f['movieId'].errors" class="invalid-feedback">
+                        <div *ngIf="f['movieId'].errors['required']">Movie is required</div>
+                    </div>
+
+                 </select>    
+                </div>
+
+                <div class="form-group">
+                    <label for="datePosted" class="form-label">Date</label>
+                    <input type="date" formControlName="datePosted" class="form-control" [max]="date"
+                        [ngClass]="{ 'is-invalid': submitted && f['datePosted'].errors }" />
+                    <div *ngIf="submitted && f['datePosted'].errors" class="invalid-feedback">
+                        <div *ngIf="f['datePosted'].errors['required']">Date is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="rating" class="form-label">Rating</label>
+                    <input type="number" formControlName="rating" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f['rating'].errors }" />
+                    <div *ngIf="submitted && f['rating'].errors" class="invalid-feedback">
+                        <div *ngIf="f['rating'].errors['required']">Rating is required</div>
+                        <div *ngIf="f['rating'].errors['min']">Rating  range is 1 to 5</div>
+                        <div *ngIf="f['rating'].errors['max']">Rating  range is 1 to 5</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" formControlName="description" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f['description'].errors }" />
+                    <div *ngIf="submitted && f['description'].errors" class="invalid-feedback">
+                        <div *ngIf="f['description'].errors['required']">Description is required</div>
+                    </div>
+                </div>
+                
+                
+                <div class="form-group">
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Add
+                    </button>
+                    <a routerLink="/reviews" class="btn btn-link">Cancel</a>
+                </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

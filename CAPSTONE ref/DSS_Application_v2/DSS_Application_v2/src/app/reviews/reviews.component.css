@@ -1,0 +1,17 @@
+img {
+    width: 200px;
+    height: 300;
+    margin-bottom: 15px;
+    /* transition: 0.3s ease-in-out; */
+    cursor: pointer;
+
+    
+}
+
+img:hover {
+    transition: 0.8s ease-in-out;
+    transform: scale(3);
+}
+table tr:hover{  
+    background: rgb(219, 243, 237);
+}

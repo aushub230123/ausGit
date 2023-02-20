@@ -1,0 +1,17 @@
+<header>
+    <div class="container">
+        <a href="#" routerLink="/" class="logo">DIgital Streaming System</a>
+        <span > <button>View Movie</button></span>
+        <div class="container">
+            <input type="text" class="form-control" placeholder= "search movies">
+            <span > <button>search</button></span>
+        </div>
+        <nav *ngIf="authenticated">
+            <ul>
+                <li>
+                    <a href="">LogOut</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

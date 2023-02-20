@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "2d972753-f2fb-4826-a2a4-493b4bd26d03",
+		"name": "DSS-actors",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "actors",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/actors"
+			},
+			"response": []
+		},
+		{
+			"name": "actors",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "     {\r\n         \"actor_id\": 0,\r\n        \"firstName\": \"Ganges_clone\",\r\n        \"lastName\": \"Ahmad\",\r\n        \"about\": \"Ever red\",\r\n        \"age\": 20,\r\n        \"gender\": \"Male\"\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/actors"
+			},
+			"response": []
+		},
+		{
+			"name": "actors",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n        \"actorId\": 2,\r\n        \"firstName\": \"Shankar THE BOSS\",\r\n        \"lastName\": \"S\",\r\n        \"about\": \"Mr.Cool & Always Cool\",\r\n        \"age\": 16,\r\n        \"gender\": \"Male\"\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/actors/2"
+			},
+			"response": []
+		},
+		{
+			"name": "actors",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n        \"actorId\": 2,\r\n        \"firstName\": \"Shankar THE BOSS\",\r\n        \"lastName\": \"S\",\r\n        \"about\": \"Mr.Cool & Always Cool\",\r\n        \"age\": 16,\r\n        \"gender\": \"Male\"\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/actors/2"
+			},
+			"response": []
+		},
+		{
+			"name": "movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/movies"
+			},
+			"response": []
+		},
+		{
+			"name": "movies",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n        \"movieId\": 13,\r\n        \"movieName\": \"This year\",\r\n        \"duration\": 3,\r\n        \"genre\": 0,\r\n        \"overview\": \"The life of a legendary sea monster hunter is turned upside down when a young girl stows away on his ship.\",\r\n        \"movieUrl\": \"/assets/LightYear.jpg\",\r\n        \"review\": 0,\r\n        \"cost\": 100,\r\n        \"releaseYear\": 2002,\r\n        \"actorId\": 2\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/movies"
+			},
+			"response": []
+		},
+		{
+			"name": "review",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/reviews"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,124 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-600">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Update movie details</h3>
+            <div *ngIf="formDataLoaded">
+            <form [formGroup]="editForm" (ngSubmit)="updateMovie()" >
+              <div class="row">   
+                <input type="hidden"   class="form-control"  readonly id="movieId" name="movieId"  formControlName="movieId"/>
+                
+                <div class="col-md-6 mb-4">
+                  <!-- <label for="movieName" class="form-label">Movie Name</label>
+                  <input type="text"  class="form-control form-control-lg" name="movieName" id="movieName"    formControlName="movieName"> -->
+                  <label for="movieName" class="form-label" >Movie Name</label>
+                    <input type="text" formControlName="movieName" readonly class="form-control form-control-lg"/>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                  <label for="actorId" class="form-label">Actor name</label>
+                    <!-- <input type="text" formControlName="lastName" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }" /> -->
+                    <select class = "form-control" name="actorId" id="actorId" formControlName="actorId"  >
+                      <option  *ngFor="let actor of actors "  [ngValue]="actor.actorId" disabled 
+                      > {{actor.firstName }} {{actor.lastName}}</option>
+                    </select>
+
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label for="duration" class="form-label">Duration in hours</label>
+                    <input type="number"  readonly  formControlName="duration" class="form-control form-control-lg"/>
+                       
+                          
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <label for="genreId" class="form-label">Genre</label>       
+                  <select class = "form-control" name="genreId"  id="genreId" value="1" formControlName="genreId"  >
+                      <option  *ngFor="let genre of genres "  [ngValue]="genre.genreId" disabled> 
+                        {{genre.name}}
+                      </option>
+                  </select> 
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <label for="cost" class="form-label">Cost</label>
+                    <input type="number" formControlName="cost" class="form-control form-control-lg"
+                        [ngClass]="{ 'is-invalid': submitted && f['cost'].errors }" />
+                    <div *ngIf="submitted && f['cost'].errors" class="invalid-feedback">
+                        <div *ngIf="f['cost'].errors['required']">Cost is required</div>
+                        <div *ngIf="f['cost'].errors['min']">Minimum cost is 1</div>
+                    </div>
+                      
+
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                  <label for="releaseYear" class="form-label">Release date</label>
+                  <input type="text" readonly formControlName="releaseYear" class="form-control"/>
+                      
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+                  <label for="movieUrl" class="form-label">Image</label>
+                  <input type="text" accept="image/*" formControlName="movieUrl" class="form-control" 
+                          [ngClass]="{ 'is-invalid': submitted && f['movieUrl'].errors }" />
+                  <div class="small text-muted mt-2">Upload movie image.....</div>
+                  <div *ngIf="submitted && f['movieUrl'].errors" class="invalid-feedback">
+                      <div *ngIf="f['movieUrl'].errors['required']">Image URL is required</div>
+                  </div>
+                </div>
+
+                
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+
+                  <label for="overview"  class="form-label">Overview</label>
+                  <textarea cols="40" rows="5" type="text" formControlName="overview" class="form-control" readonly
+                      [ngClass]="{ 'is-invalid': submitted && f['overview'].errors }" ></textarea>
+                      <div *ngIf="submitted && f['overview'].errors" class="invalid-feedback">
+                      <div *ngIf="f['overview'].errors['required']">Overview is required</div>                           
+                  </div>
+                </div>
+
+                
+              </div>
+
+              
+              <div class="row">
+                 <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-group"> <br>
+                    <div> 
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                      <button class="btn btn-primary btn-lg" >Update</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <span style="width: 20px ;"> <a routerLink="/movies" class="btn btn-primary btn-lg">Cancel</a> </span>
+                    </div>
+                    
+                  </div>
+
+                </div>
+
+                
+              </div>
+             
+          </form>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

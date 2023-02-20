@@ -1,0 +1,23 @@
+<div class="container">
+    <!--div class="row" -->
+        <ng-container>
+       
+        
+                <img src="{{movie.movieUrl}}" alt="">
+                <h2 style="color: blue; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">Title:{{movie.movieName}}</h2>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"><strong>Overview:</strong>{{movie.overview}}</p>
+                <p><strong>Genre:</strong> {{movie.genreId}}</p>
+                <p><strong>Actor:</strong> {{movie.actorId}}</p>
+                
+                <p><strong>Duration:</strong> {{movie.duration}}</p>
+                <!-- <p><strong>Rating:</strong> {{movie.review}}</p> -->
+                <!--span><button class="btn btn-primary" (click)=editMovie(movie)>Edit</button> </span>
+                <span><button class="btn btn-primary" (click)=deleteMovie(movie)>Delete</button></span-->
+                
+                
+                
+            
+        </ng-container>
+
+    <!-- /div -->
+</div>

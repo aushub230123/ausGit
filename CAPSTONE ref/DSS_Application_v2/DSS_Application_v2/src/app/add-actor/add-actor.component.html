@@ -1,0 +1,85 @@
+
+
+<div class="row">
+    <div class="Absolute-Center is-Responsive">
+        <div class="card shadow-lg rounded">
+            <h4 class="card-header">Actor Details</h4>
+            <div class="card-body">
+                <form class="row g-3" [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <input type="hidden"  formControlName="actorId" class="form-control" value="0" readonly />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" formControlName="firstName" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }" />
+                        <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
+                            <div *ngIf="f['firstName'].errors['required']">First Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" formControlName="lastName" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }" />
+                        <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
+                            <div *ngIf="f['lastName'].errors['required']">Last Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="about" class="form-label">About</label>
+                        <input type="text" formControlName="about" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f['about'].errors }" />
+                        <div *ngIf="submitted && f['about'].errors" class="invalid-feedback">
+                            <div *ngIf="f['about'].errors['required']">About is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender" class="form-label">Gender</label>
+                        <select name="gender" formControlName="gender" class="form-control" 
+                        [ngClass]="{ 'is-invalid': submitted && f['gender'].errors }">
+                            <option value="male" > Male</option>
+                            <option value="female"> Female</option>
+                            <option value="other"> other</option>
+                        </select>
+
+                        <div *ngIf="submitted && f['gender'].errors" class="invalid-feedback">
+                            <div *ngIf="f['gender'].errors['required']">Gender is required</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age" class="form-label">Age</label>
+                        <input type="number" formControlName="age" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f['age'].errors }" />
+                        <div *ngIf="submitted && f['age'].errors" class="invalid-feedback">
+                            <div *ngIf="f['age'].errors['required']">Age is required</div>
+                            <div *ngIf="f['age'].errors['min']">Minimum age is 1 years</div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                          <label for="actorUrl" class="form-label">Image</label>
+                          <input type="file" accept="image/*" formControlName="actorUrl" class="form-control" 
+                                  [ngClass]="{ 'is-invalid': submitted && f['actorUrl'].errors }" />
+                          <div class="small text-muted mt-2">Upload Actor image.....</div>
+                          <div *ngIf="submitted && f['actorUrl'].errors" class="invalid-feedback">
+                              <div *ngIf="f['actorUrl'].errors['required']">Image URL is required</div>
+                          </div>
+        
+                    </div>
+                        
+
+                    <div class="form-group">
+                        <button  class="btn btn-primary">
+                            Add
+                        </button>
+                        <a routerLink="/actors" class="btn btn-link">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

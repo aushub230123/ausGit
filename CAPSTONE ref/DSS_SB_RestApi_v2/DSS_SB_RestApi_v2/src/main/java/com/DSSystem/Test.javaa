@@ -1,0 +1,12 @@
+package com.DSSystem;
+
+public class Test {
+public static void main(String[] args) {
+//	C:\fakepath\MayaTheBeeMovie.jpg
+	String filePAth = "C:\\fakepath\\MayaTheBeeMovie.jpg";
+	System.out.println(filePAth);
+
+ String trimmedPath = "/"+filePAth.substring(12,filePAth.length());
+ System.out.println(trimmedPath);
+}
+}
