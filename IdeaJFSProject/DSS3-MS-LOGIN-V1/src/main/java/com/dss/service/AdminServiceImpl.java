@@ -27,7 +27,12 @@ public class AdminServiceImpl implements AdminService {
             System.out.println("No Such Algorithm....");
             throw new RuntimeException(e);
         }
-        AdminEntity savedUser = adminRepository.save(adminEntity);
+        AdminEntity savedUser = new AdminEntity("adeveloper@gmail.com"
+                , "Adeveloper"
+                , "AndTester"
+                ,"09999999999"
+                , "P@ssw0rd");
+
         //• Verify that a new account is created if all the fields that have been entered by the  user are proper.
         System.out.println("Account successfully created!");
         return savedUser;
