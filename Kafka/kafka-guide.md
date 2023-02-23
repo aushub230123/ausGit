@@ -15,5 +15,5 @@ https://archive.apache.org/dist/kafka/2.4.0/kafka_2.12-2.4.0.tgz
 5. Consumer (new terminal)  
 .\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic testTopic --from-beginning
 
--- view topics
+-- view topics  
 .\bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --describe
