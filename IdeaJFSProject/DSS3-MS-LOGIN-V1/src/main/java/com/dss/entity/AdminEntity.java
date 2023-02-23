@@ -30,14 +30,14 @@ public class AdminEntity {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "AdminEntity{" +
-                "emailId='" + emailId + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "AdminEntity{" +
+//                "emailId='" + emailId + '\'' +
+//                ", firstName='" + firstName + '\'' +
+//                ", lastName='" + lastName + '\'' +
+//                ", phoneNumber='" + phoneNumber + '\'' +
+//                ", password='" + password + '\'' +
+//                '}';
+//    }
 }

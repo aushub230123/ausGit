@@ -25,16 +25,21 @@ class Dss3MsLoginV1ApplicationTests {
 	@Test
 	void registerSuccess(){
 
-		AdminEntity admin = new AdminEntity("adeveloper@gmail.com"
+		AdminEntity adminToDb = new AdminEntity("adeveloper@gmail.com"
 				, "Adeveloper"
 				, "AndTester"
 				,"09999999999"
 				, "P@ssw0rd");
 
+		AdminEntity adminFromDb = new AdminEntity("adeveloper@gmail.com"
+				, "Adeveloper"
+				, "AndTester"
+				,"09999999999"
+				, "P@ssw0rd1");
+		Mockito.when(adminRepository.save(adminToDb)).thenReturn(adminFromDb);
 
-		Mockito.when(adminRepository.save(admin)).thenReturn(admin);
+		Assertions.assertEquals(adminFromDb, adminService.save(adminToDb));
 
-		Assertions.assertEquals(admin, adminService.save(admin));
 	}
 
 	@Test
